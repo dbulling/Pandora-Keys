@@ -143,11 +143,12 @@ namespace PandoraKeys
                 try
                 {
                     HtmlElement skin = _webBrowser.Document.GetElementById("skinStyle");
+                    if (skin.GetAttribute("href") == "") return "/static/pandora_one/skins/pandoraone/skin.css";
                     return skin.GetAttribute("href");
                 }
                 catch
                 {
-                    return "";
+                    return "/static/pandora_one/skins/pandoraone/skin.css";
                 }
             }
 
